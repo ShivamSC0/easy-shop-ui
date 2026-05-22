@@ -31,7 +31,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [products, setProducts] = useState<Product[]>([]);
   useEffect(() => {
-  fetch("http://localhost:5000/products")
+  fetch("http://13.220.44.251:5000/products")
     .then((res) => res.json())
     .then((data) => {
       setProducts(data);
