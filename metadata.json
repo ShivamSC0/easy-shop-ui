@@ -1,0 +1,6 @@
+{
+  "name": "Easy Shop",
+  "description": "Vibrant Editorial Fashion Marketplace with curated premium trends.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

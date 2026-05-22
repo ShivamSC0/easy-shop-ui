@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+  --font-display: "Montserrat", "Inter", sans-serif;
+
+  /* Brand and Theme Color Tokens mapped to Tailwind V4 */
+  --color-primary: #b90041;
+  --color-primary-hover: #9c0032;
+  --color-primary-container: #df2457;
+  --color-on-primary-container: #fffbff;
+  --color-surface: #f9f9ff;
+  --color-surface-dim: #d8d9e3;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f3fd;
+  --color-surface-container: #ecedf7;
+  --color-surface-container-high: #e6e8f1;
+  --color-surface-container-highest: #e1e2ec;
+  --color-on-surface: #191c22;
+  --color-on-surface-variant: #5b4042;
+  --color-outline: #8f6f72;
+  --color-outline-variant: #e3bdc0;
+  
+  --spacing-gutter: 16px;
+  --spacing-margin-mobile: 16px;
+}
+
+/* Custom auxiliary utility styles */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll-x 25s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
