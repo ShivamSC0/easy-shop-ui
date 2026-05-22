@@ -14,7 +14,7 @@ import {
   Info
 } from 'lucide-react';
 import { Product, CartItem, AppTab } from './types.ts';
-import { PRODUCTS, NOTIFICATIONS } from './data.ts';
+import { NOTIFICATIONS } from './data.ts';
 import { Header } from './components/Header.tsx';
 import { ProductCard } from './components/ProductCard.tsx';
 import { ProductDetailModal } from './components/ProductDetailModal.tsx';
@@ -29,6 +29,15 @@ export default function App() {
   // Navigation & Screen States
   const [activeTab, setActiveTab] = useState<AppTab>('home');
   const [searchQuery, setSearchQuery] = useState('');
+  const [products, setProducts] = useState<Product[]>([]);
+  useEffect(() => {
+  fetch("http://localhost:5000/products")
+    .then((res) => res.json())
+    .then((data) => {
+      setProducts(data);
+    })
+    .catch((err) => console.log(err));
+}, []);
 
   // Cart & Wishlist persistence with LocalStorage
   const [cart, setCart] = useState<CartItem[]>(() => {
@@ -114,7 +123,7 @@ export default function App() {
   };
 
   // Filter products specifically on the Home view
-  const trendingFilteredProducts = PRODUCTS.filter((p) => {
+  const trendingFilteredProducts = products.filter((p) => {
     if (!p.isTrend) return false;
     const matchesSearch = 
       p.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -155,12 +164,12 @@ export default function App() {
               <section className="py-4 px-4 bg-white border-b border-rose-50 overflow-hidden">
                 <div className="flex gap-4 overflow-x-auto hide-scrollbar">
                   {[
-                    { id: 'all', name: 'All Style', img: PRODUCTS[0].image },
+                    { id: 'all', name: 'All Style', img: products[0]?.image },
                     { id: 'men', name: 'Men', img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBhAGpuM55Ti91CMgwaNTmjOmHQZG0r-nt8VlqXCJvO6FfMDBHnSPVlwSf2tBTCc1DckFEhiYvi9mSyfyFhc7hIFTw_6xFeWcMMkcxqkLkWNYCvHyyfsNPRO821zR-vjAM9oz4qlfd3woubOTlyom4tBmt_Hi9pBHkd6YNvgk6WgSw7qViUWziau7MsAg9cVsF3OK7s4H7uFHqEV5wWG7CjIRf23k3Q5NjmaIq10vr4EEZ7YfESlMUNztgOcwBA28nG-k8E_glz2Ws" },
                     { id: 'women', name: 'Women', img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDBVjn581Nrv2FuJrJECxkxtJsNLvG7CxvhtexJuVpYeqhEZ149UF9QDqOO-3D2NGtsQBxxop1dmXZ5j3evD32WoYo1Jp2Xj6KR0dnb1TZKszxGJiIdJ50cOiwqw68TqzgqYvktuj0-h1nGKneMrjV5N3h9p0GMuCqQC_be9jcFE_96O-pe-mn7eIwWE2a1JxEuMjD1HkNm2RucOF7YRh-0wScrl6PGDbmYSQM22NMA-D0AvzEL9a5idLP5CdVQEaMFITFiyTFFBAY" },
-                    { id: 'kids', name: 'Kids', img: PRODUCTS[6].image },
-                    { id: 'beauty', name: 'Beauty', img: PRODUCTS[7].image },
-                    { id: 'home', name: 'Home', img: PRODUCTS[8].image },
+                    { id: 'kids', name: 'Kids', img: products[0]?.image },
+                    { id: 'beauty', name: 'Beauty', img: products[1]?.image },
+                    { id: 'home', name: 'Home', img: products[2]?.image },
                   ].map((cat) => {
                     const isActive = homeCategoryFilter === cat.id;
                     return (
