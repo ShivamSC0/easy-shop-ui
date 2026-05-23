@@ -164,13 +164,37 @@ export default function App() {
               <section className="py-4 px-4 bg-white border-b border-rose-50 overflow-hidden">
                 <div className="flex gap-4 overflow-x-auto hide-scrollbar">
                   {[
-                    { id: 'all', name: 'All Style', img: products[0]?.image },
-                    { id: 'men', name: 'Men', img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBhAGpuM55Ti91CMgwaNTmjOmHQZG0r-nt8VlqXCJvO6FfMDBHnSPVlwSf2tBTCc1DckFEhiYvi9mSyfyFhc7hIFTw_6xFeWcMMkcxqkLkWNYCvHyyfsNPRO821zR-vjAM9oz4qlfd3woubOTlyom4tBmt_Hi9pBHkd6YNvgk6WgSw7qViUWziau7MsAg9cVsF3OK7s4H7uFHqEV5wWG7CjIRf23k3Q5NjmaIq10vr4EEZ7YfESlMUNztgOcwBA28nG-k8E_glz2Ws" },
-                    { id: 'women', name: 'Women', img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDBVjn581Nrv2FuJrJECxkxtJsNLvG7CxvhtexJuVpYeqhEZ149UF9QDqOO-3D2NGtsQBxxop1dmXZ5j3evD32WoYo1Jp2Xj6KR0dnb1TZKszxGJiIdJ50cOiwqw68TqzgqYvktuj0-h1nGKneMrjV5N3h9p0GMuCqQC_be9jcFE_96O-pe-mn7eIwWE2a1JxEuMjD1HkNm2RucOF7YRh-0wScrl6PGDbmYSQM22NMA-D0AvzEL9a5idLP5CdVQEaMFITFiyTFFBAY" },
-                    { id: 'kids', name: 'Kids', img: products[0]?.image },
-                    { id: 'beauty', name: 'Beauty', img: products[1]?.image },
-                    { id: 'home', name: 'Home', img: products[2]?.image },
-                  ].map((cat) => {
+  {
+    id: 'all',
+    name: 'All Style',
+    img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8'
+  },
+  {
+    id: 'men',
+    name: 'Men',
+    img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f'
+  },
+  {
+    id: 'women',
+    name: 'Women',
+    img: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c'
+  },
+  {
+    id: 'kids',
+    name: 'Kids',
+    img: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef'
+  },
+  {
+    id: 'beauty',
+    name: 'Beauty',
+    img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9'
+  },
+  {
+    id: 'home',
+    name: 'Home',
+    img: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85'
+  },
+].map((cat) => {
                     const isActive = homeCategoryFilter === cat.id;
                     return (
                       <button

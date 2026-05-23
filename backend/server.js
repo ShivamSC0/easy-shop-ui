@@ -20,30 +20,30 @@ const products = [
     id: "1",
     name: "Nike Air Max",
     brand: "Nike",
-    category: "Shoes",
+    category: "men",
     price: 120,
     description: "Comfortable running shoes",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
     isTrend: true
   },
   {
     id: "2",
     name: "Apple Watch",
     brand: "Apple",
-    category: "Electronics",
+    category: "beauty",
     price: 399,
     description: "Smart wearable device",
-    image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d",
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
     isTrend: true
   },
   {
     id: "3",
     name: "Leather Jacket",
     brand: "Zara",
-    category: "Fashion",
+    category: "women",
     price: 180,
     description: "Premium leather jacket",
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
     isTrend: false
   }
 ];
